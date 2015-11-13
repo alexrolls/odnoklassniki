@@ -8,7 +8,7 @@ module Odnoklassniki
       Config::VALID_OPTIONS_KEYS.each do |key|
         instance_variable_set("@#{key}".to_sym, attrs[key])
       end
-      @refreshed = false
+      @refreshed = @access_token.present?
     end
 
     def get(method, params={}, &block)
@@ -46,7 +46,7 @@ module Odnoklassniki
 
     def refresh_credentials
       {
-        refresh_token: @access_token,
+        refresh_token: @refresh_token,
         grant_type:    'refresh_token',
         client_id:     @client_id,
         client_secret: @client_secret

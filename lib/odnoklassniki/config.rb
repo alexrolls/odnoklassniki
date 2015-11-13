@@ -2,6 +2,7 @@ module Odnoklassniki
   class Config
 
     VALID_OPTIONS_KEYS = [:access_token,
+                          :refresh_token,
                           :client_id,
                           :client_secret,
                           :application_key].freeze
@@ -16,6 +17,7 @@ module Odnoklassniki
 
     def initialize(options={})
       @access_token = options[:access_token] || options['access_token']
+      @refresh_token = options[:refresh_token] || options['refresh_token']
       @client_id = options[:client_id] || options['client_id']
       @client_secret = options[:client_secret] || options['client_secret']
       @application_key = options[:application_key] || options['application_key']
