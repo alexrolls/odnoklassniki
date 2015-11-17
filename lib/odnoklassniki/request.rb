@@ -10,6 +10,7 @@ module Odnoklassniki
       @access_token    = credentials[:access_token]
       @client_secret   = credentials[:client_secret]
       @application_key = credentials[:application_key]
+      @session_key = credentials[:session_key]
     end
 
     # Performs a get request
@@ -73,7 +74,7 @@ module Odnoklassniki
     end
 
     def signed(params)
-      params = params.merge(application_key: @application_key)
+      params = params.merge(application_key: @application_key, session_key: @session_key)
       params.merge(sig: signature(params), access_token: @access_token)
     end
 

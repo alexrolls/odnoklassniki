@@ -5,7 +5,8 @@ module Odnoklassniki
                           :refresh_token,
                           :client_id,
                           :client_secret,
-                          :application_key].freeze
+                          :application_key,
+    :session_key].freeze
 
     attr_accessor *VALID_OPTIONS_KEYS
 
@@ -21,6 +22,7 @@ module Odnoklassniki
       @client_id = options[:client_id] || options['client_id']
       @client_secret = options[:client_secret] || options['client_secret']
       @application_key = options[:application_key] || options['application_key']
+      @session_key = options[:session_key] || options['session_key']
     end
 
     def options
