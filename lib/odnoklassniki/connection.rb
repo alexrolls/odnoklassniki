@@ -3,7 +3,7 @@ require 'faraday_middleware'
 
 module Odnoklassniki
   module Connection
-    API_HOST = 'http://api.odnoklassniki.ru'
+    API_HOST = 'https://api.ok.ru'.freeze
 
     def connection(options={})
       options = options.clone
