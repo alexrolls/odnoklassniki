@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ['lib']
-  s.add_dependency "faraday",            '~> 0.9',  '>= 0.9.0'
+  s.add_dependency "faraday",            '~> 0.8.11',  '>= 0.8.11'
   s.add_dependency "faraday_middleware", '~> 0.9',  '>= 0.9.0'
   s.add_dependency "multi_json",         '~> 1.10', '>= 1.10.0'
   s.add_development_dependency 'pry',                '0.10.1'
